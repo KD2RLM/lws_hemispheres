@@ -98,7 +98,7 @@ prmd['scale_0']         = -180
 prmd['scale_1']         =  180
 #prmd['cmap']            = mpl.cm.hsv
 # https://colorcet.holoviz.org/user_guide/Continuous.html
-prmd['cmap']            = mpl.cm.get_cmap('cet_CET_C6') #colorcet.cyclic_rygcbmr_50_90_c64
+prmd['cmap']            = mpl.colormaps.get_cmap('cet_CET_C6') #colorcet.cyclic_rygcbmr_50_90_c64
 prmd['cbar_label']      = 'MSTID Azimuth [deg]'
 prmd['cbar_tick_fmt']   = '%.0f'
 prmd['title']           = 'SuperDARN MSTID Propagation Azimuth'
@@ -1454,6 +1454,9 @@ if __name__ == '__main__':
 
     params = []
     params.append('meanSubIntSpect_by_rtiCnt') # This is the MSTID index.
+
+
+
 #    params.append('meanSubIntSpect')
 #    params.append('intSpect_by_rtiCnt')
 #    params.append('intSpect')
