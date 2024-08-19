@@ -127,9 +127,9 @@ class LSTID_HAM(object):
         hndls    = []
         
         # Eliminate waves with period > 5 hr.
-#        tf = df['period_hr'] > 5
-#        df.loc[tf,'period_hr']      = np.nan
-#        df.loc[tf,'amplitude_km']   = np.nan
+        tf = df['period_hr'] < 1.5
+        df.loc[tf,'period_hr']      = np.nan
+        df.loc[tf,'amplitude_km']   = np.nan
 
         # Eliminate waves with amplitudes < 15 km.
 #        tf = df['amplitude_km'] < 15
@@ -148,7 +148,7 @@ class LSTID_HAM(object):
 #        df.loc[tf,'period_hr']      = np.nan
 #        df.loc[tf,'amplitude_km']   = np.nan
         
-        df['amplitude_km'] = df['amplitude_km'].interpolate(method='linear')
+#        df['amplitude_km'] = df['amplitude_km'].interpolate(method='linear')
 #        df    = df.dropna()
         
         xx      = df['date']
